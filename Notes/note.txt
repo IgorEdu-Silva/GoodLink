@@ -1,0 +1,93 @@
+const log = window.document.getElementById('inpt-for-login')
+const caixalogin = window.document.getElementById('login')
+
+const reg = window.document.getElementById('inpt-for-registro')
+const caixaregistrar = window.document.getElementById('registro')
+
+const passLog = window.document.getElementById('inpt-for-pass')
+const caixapassLog = window.document.getElementById('reset-pass')
+
+const caixaRegLog = window.document.getElementById('entarRegistrar')
+
+const confirmReset = window.document.getElementById('confirmReset')
+
+caixaregistrar.style.display = 'none';
+caixalogin.style.display = 'block';
+caixapassLog.style.display = 'none';
+caixaRegLog.style.display = '';
+
+log.addEventListener('click', entrar)
+reg.addEventListener('click', registrar)
+passLog.addEventListener('click', reset)
+confirmReset.addEventListener('click', back)
+
+function entrar() {
+    if (caixalogin.style.display === 'none' && caixaregistrar.style.display === 'block') {
+        caixalogin.style.display = 'block';
+        caixaRegLog.style.display = 'block';
+        caixaregistrar.style.display = 'none';
+        caixapassLog.style.display = 'none'; 
+    }
+}
+
+function registrar() {
+    if (caixaregistrar.style.display === 'none' && caixalogin.style.display === 'block') {
+        caixaregistrar.style.display = 'block';
+        caixaRegLog.style.display = 'block';
+        caixalogin.style.display = 'none';
+        caixapassLog.style.display = 'none';
+    }
+}
+
+function reset() {
+    if (caixapassLog.style.display === 'none' && caixaregistrar.style.display === 'none' && caixalogin.style.display === 'block') {
+        caixapassLog.style.display = 'block';
+        caixaRegLog.style.display = 'none';
+        caixalogin.style.display = 'none';
+        caixaregistrar.style.display = 'none';
+    }
+}
+
+function back(){
+    if(caixaRegLog.style.display === 'none' && caixaregistrar.style.display === 'none' && caixalogin.style.display === 'block'){
+        caixalogin.style.display = 'block';
+        caixapassLog.style.display = 'none';
+        caixaregistrar.style.display = 'none';
+        caixaRegLog.style.display = 'block'
+    }
+}
+
+
+//-------------------------------------------------
+
+@app.route('/_registro', methods=["POST"])
+def registro():
+    user = []
+    
+    nameRegister = request.form.get('name_register')
+    emailRegister = request.form.get('email_register')
+    passRegister = request.form.get('password_register') 
+
+    user = [
+        {
+            "nameRegister": nameRegister,
+            "emailRegister": emailRegister,
+            "passRegister": passRegister
+        }
+    ]
+
+    with open('users.json', 'w') as usersTemp:
+        usersTempOpen = json.load(usersTemp)
+
+    newUser = user + usersTemp
+
+    with open('user.json', 'w') as recTemp:
+        json.dump(newUser, recTemp, indent=4)
+
+    return render_template('/index.html')
+
+//-------------------------------------------------
+
+https://www.youtube.com/playlist?list=PLr9-FeATlrPLsx5904LWpNml0a4aSSA5h
+
+//-------------------------------------------------

@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@500&display=swap');
+
+@media (max-width: 768px) {
+    main {
+        padding: 0.5rem; 
+    }
+}
+
+* {
+    font-family: Assistant, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    border-radius: 50px;
+}
+
+body {
+    display: flex;
+    background-image: url(../static/imagens/pexels-peter-olexa-4012966.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    margin: 0;
+    height: 100vh;
+}
+
+main {
+    width: 100%;
+    max-width: 550px;
+    margin: 10vh auto;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+span#entarRegistrar {
+    display: flex;
+    margin-bottom: 5rem;
+    border-bottom: 0.2rem solid #ffffff;
+    
+}
+
+.login-registro {
+    display: flex;
+}
+
+.inpt_for_logres {
+    padding: 0.5rem 0.7rem;
+	outline: none;
+	border: none;
+    background-color: transparent;
+    border-radius: 0px;
+    margin-bottom: -0.2rem;
+    color: #ffffff;
+    width: 100%;
+}
+
+.inpt_for_logres:focus {
+    border-bottom: 0.23em solid #0099DD;
+    transition-duration: 300ms;
+    color: #0099DD;
+}
+
+input {
+    background-color: #ffffff;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+span#facebook_Google {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+}
+
+#inptLogarFacebook{
+    background-color: #4267B2;
+    color: rgb(250, 250, 250);
+}
+
+#inptLogarGoogle {
+    color: rgb(7, 7, 7);
+    background-color: #EFEFEF;
+}
+
+.loginsAlternativo {
+    min-width: 100px;
+    width: 45% ;
+    padding: 0.7em ;
+    font-size: 0.9em;
+    text-align: center;
+    vertical-align: middle;
+    box-shadow: 0.1rem 0.1rem 5px rgba(0, 0, 0, 0.555);
+}
+
+.logoFacebook, .logoGoogle {
+    width: 1em;
+    margin-bottom: -0.2em;
+}
+
+.logoFacebook {
+    width: 1.2em;
+}
+
+p {
+    color: #ffffff;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+form, fieldset {
+    padding: 0;
+    border: none;
+    display: flex;
+}
+
+fieldset {
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+fieldset > input {
+    padding: 1rem;
+}
+
+a.links {
+    text-align: end;
+    font-size: 0.9em;
+    color: #0099DD;
+} 
+
+a.links:hover {
+    color: #00ABBD;
+}
+
+.links-pass {
+    text-align: end;
+    font-size: 0.9em;
+    color: #0099DD;
+    background: none;
+} 
+
+.links-pass:hover {
+    color: #00ABBD;
+}
+
+nobr > label {
+    font-size: 0.9rem;
+    color: #ffffff;
+}
+
+.bttnLogRes {
+    margin-bottom: 0;
+    font-size: 1.02em;
+    color: blanchedalmond;
+    background-color: #0099DD;
+    margin-top: 00.5rem;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.219);
+}
+
+.bttnLogRes:hover {
+    background-color: #00ABBD;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.37);
+}
+
+/* .flashAlert {
+    
+} */
