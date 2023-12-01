@@ -91,3 +91,37 @@ def registro():
 https://www.youtube.com/playlist?list=PLr9-FeATlrPLsx5904LWpNml0a4aSSA5h
 
 //-------------------------------------------------
+
+ # file_path = "users.json"
+
+    # try: 
+    #     with open(file_path, 'r') as file:
+    #         data = json.load(file)
+    # except FileNotFoundError: 
+    #     with open(file_path, 'w') as file:
+    #         initial_data = []
+    #         json.dump(initial_data, file)
+
+//-------------------------------------------------
+
+    nameRegister = request.form.get('name_register')
+    emailRegister = request.form.get('email_register')
+    passRegister = request.form.get('password_register') 
+
+    with open('users.json') as usersRead:
+        users = json.load(usersRead)
+
+    newUser = [
+        {
+            "nameRegister": nameRegister,
+            "emailRegister": emailRegister,
+            "passRegister": passRegister
+        }
+    ]
+
+    users.append(newUser)
+
+    with open('users.json', 'w') as usersTemp:
+        json.dump(users, usersTemp, indent=4)
+
+    return redirect("/")

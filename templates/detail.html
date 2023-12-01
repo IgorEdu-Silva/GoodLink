@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    
+    <link rel="stylesheet" href="../static/styleForum.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="../static/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="shortcut icon" href="../static/imagens/favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../static/imagens/favicon_io/android-chrome-192x192.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../static/imagens/favicon_io/android-chrome-512x512.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../static/imagens/favicon_io/apple-touch-icon.png" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/imagens/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/imagens/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="../static/imagens/favicon_io/site.webmanifest">
+</head>
+
+<body>
+
+    <div class="separetor"></div>
+
+    <div class="container-detail">
+        <div class="navigate">
+            <span>
+                <a href="{{ url_for('forum') }}"><ion-icon name="arrow-undo" id="buttonBackVideo"></ion-icon></a>
+            </span> 
+        </div>
+
+        <div class="topic-container">
+            <div class="head">
+                <div class="authorsHead"><a href="{{ playlist.URLCanal }}" target="_blank">{{ playlist.nomeDoCanal }}</a></div>
+            </div>
+        
+            <div class="body">
+                <div class="content-video">
+                    <!-- <iframe width="560" height="315" src="{{ playlist.URLVideo }}" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen></iframe> -->
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/VKjFuX91G5Q?si=Ak3k8KTOIJdoYngl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>            
+        </div>
+        
+        
+        
+    </div>
+    
+    <!-- <div class="forum-info">
+        <div class="chart">
+            <a href="https://github.com/IgorEdu-Silva/GoodLink" target="_blank">GoodLink</a>
+        </div>
+        <span>Este site foi criado para fins estudantis.</span>
+    </div>
+
+    <footer>
+        <span>&copy;  <a href="https://github.com/IgorEdu-Silva">Igor Eduardo</a> | Todos os direitos reservados</span>
+    </footer> -->
+
+    <script src="main.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+</body>
+</html>

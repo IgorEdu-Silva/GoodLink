@@ -10,6 +10,12 @@
     font-family: Assistant, Helvetica, sans-serif;
 }
 
+:root {
+    --primaryColor: #fff;
+    --secondColor:  #0099DD;
+    --secondColorHover: #0078bd;
+}
+
 a {
     text-decoration: none;
     border-radius: 50px;
@@ -35,8 +41,8 @@ main {
 
 span#entarRegistrar {
     display: flex;
-    margin-bottom: 5rem;
-    border-bottom: 0.2rem solid #ffffff;
+    margin-top: 5rem;
+    border-bottom: 0.2rem solid var(--primaryColor);
     
 }
 
@@ -51,18 +57,18 @@ span#entarRegistrar {
     background-color: transparent;
     border-radius: 0px;
     margin-bottom: -0.2rem;
-    color: #ffffff;
+    color: var(--primaryColor);
     width: 100%;
 }
 
 .inpt_for_logres:focus {
-    border-bottom: 0.23em solid #0099DD;
+    border-bottom: 0.23em solid var(--secondColor);
     transition-duration: 300ms;
-    color: #0099DD;
+    color: var(--secondColor);
 }
 
 input {
-    background-color: #ffffff;
+    background-color: var(--primaryColor);
     outline: none;
     border: none;
     border-radius: 5px;
@@ -74,10 +80,10 @@ span#facebook_Google {
     justify-content: center;
 }
 
-#inptLogarFacebook{
+/* #inptLogarFacebook{
     background-color: #4267B2;
     color: rgb(250, 250, 250);
-}
+} */
 
 #inptLogarGoogle {
     color: rgb(7, 7, 7);
@@ -104,7 +110,7 @@ span#facebook_Google {
 }
 
 p {
-    color: #ffffff;
+    color: var(--primaryColor);
     text-align: center;
     font-size: 0.9em;
 }
@@ -127,11 +133,11 @@ fieldset > input {
 a.links {
     text-align: end;
     font-size: 0.9em;
-    color: #0099DD;
+    color: var(--primaryColor);
 } 
 
 a.links:hover {
-    color: #00ABBD;
+    color: var(--secondColorHover);
 }
 
 .links-pass {
@@ -142,28 +148,28 @@ a.links:hover {
 } 
 
 .links-pass:hover {
-    color: #00ABBD;
+    color: var(--secondColorHover);
 }
 
 nobr > label {
     font-size: 0.9rem;
-    color: #ffffff;
+    color: var(--secondColor);
 }
 
 .bttnLogRes {
     margin-bottom: 0;
     font-size: 1.02em;
     color: blanchedalmond;
-    background-color: #0099DD;
+    background-color: var(--secondColor);
     margin-top: 00.5rem;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.219);
 }
 
 .bttnLogRes:hover {
-    background-color: #00ABBD;
+    background-color: var(--secondColorHover);
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.37);
 }
 
-/* .flashAlert {
-    
-} */
+.flashAlertDiv {
+ display: none;   
+}

@@ -1,0 +1,696 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+:root {
+    --primaryColor: #FFFFFF;
+    --secondColor: #0099DD;
+    --thirdColor: #000000;
+    --secondColorHover: #0078bd; 
+    --primaryFontColor: #000000;
+    --secondFontColor: #FFFFFF;
+    --thirdFontColor: #0099DD;
+}
+
+body {
+    font-size: 14px;
+    background-image: url(imagens/pexels-julia-m-cameron-4144923.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--primaryFontColor);
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+a {
+    color: var(--primaryFontColor);
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+
+/* -------------------- Forum ------------------------------------  */
+.container {
+    margin: 0 0 0 0;
+    padding: 0 2% 0 2%;
+    height: 70vh;
+}
+
+.subforum {
+    margin-top: 20px;
+    /* width: 100%; */
+    height: 100%;
+}
+
+.subforum-title {
+    background-color: var(--primaryColor);
+    color: var(--thirdFontColor);
+    padding: 5px;
+    border-radius: 5px;
+    margin: 4px;
+    align-items: center;
+    text-align: center;
+    font-size: 2em;
+}
+
+
+.subforum-row {
+    display: grid;
+    grid-template-columns: 7% 60% 13% 20%;
+}
+
+.subforum-column {
+    padding: 10px;
+    margin: 4px;
+    border-radius: 5px;
+    background-color: var(--primaryColor);
+}
+
+.subforum-description * {
+    margin-block: 0;
+}
+
+.subforum-description a {
+    color: var(--thirdFontColor);
+}
+
+.subforum-description a:hover {
+    color: var(--secondColorHover);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subforum-icon i {
+    font-size: 45px;
+}
+
+.subforum-icon i:hover {
+    color: var(--secondColorHover);
+}
+
+.subforum-devider {
+    display: none;
+}
+
+.chatbox-outline{
+    color: var(--secondColor);
+    
+    height: 100%;
+    width: 100%;
+}
+
+
+div.subforum-title {
+    display: flex;
+    /* margin-bottom: 5rem; */
+    border-bottom: 0.2rem solid var(--primaryColor);
+    
+}
+
+.inpt_for_logres {
+    /* padding: 0.5rem 0.7rem; */
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-radius: 0px;
+    /* margin-bottom: -0.2rem; */
+    color: var(--secondColor);
+    width: 100%;
+}
+
+.inpt_for_logres:focus {
+    border-bottom: 0.23em solid var(--secondColor);
+    transition-duration: 300ms;
+    color: var(--secondColor);
+}
+
+/* Adicione mais estilos conforme necessário para os botões de Entrar e Registrar */
+
+/* Estilos para os botões de Playlists e Adicionar playlist */
+#inpt-for-playlist,
+#inpt-for-addplaylist {
+    /* padding: 0.5rem 0.7rem; */
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-radius: 0px;
+    /* margin-bottom: -0.2rem; */
+    color: var(--secondColor);
+    width: 100%;
+}
+
+#inpt-for-playlist:focus,
+#inpt-for-addplaylist:focus {
+    border-bottom: 0.23em solid var(--secondColor);
+    transition-duration: 300ms;
+    color: var(--secondColor);
+}
+
+
+/* Estilos para o formulário */
+#playlist-form {
+    display: flex;
+    flex-direction: column;
+    
+    /* padding: 20px; */
+    padding-top: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+
+    background-color: var(--primaryColor);
+    border-radius: 5px;
+    
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    /* margin-bottom: 10%; */
+
+    height: 60vh;
+    /* width: 100vw; */
+
+    align-items: center;
+    text-align: center;
+    
+}
+
+#playlist-form label {
+    margin-bottom: 20px;
+    /* margin-right: 80%;  */
+    
+    /* align-items: center; */
+}
+
+#playlist-form input[type="text"],
+#playlist-form textarea {
+    color: var(--primaryFontColor);
+    background-color: #7eb2e6;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 3px;
+
+    /* width: 20vw;
+    height: 20vh; */
+}
+
+#playlist-form input[type="submit"] {
+    padding: 10px 15px;
+    margin: 20px 0;
+    border: none;
+    border-radius: 3px;
+    background-color: var(--secondColor);
+    color: var(--secondFontColor);
+    font-weight: bold;
+    cursor: pointer;
+
+    height: 4vh;
+    width: 40vw;
+}
+
+#playlist-form input[type="submit"]:hover {
+    background-color: var(--secondColorHover);
+}
+
+
+
+/* ---------------- Forum para celular ---------------------------- */
+@media screen and (max-width: 460px) {
+    .container {
+        margin: 0 0 0 5px;
+        padding: 0 0 0 5px;
+    }
+
+    .subforum-row {
+        display: grid;
+        grid-template-columns: 25% 75%;
+        grid-template-rows: 65% 35%;
+    }
+
+    .subforum-devider {
+        display: block;
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(190, 190, 190, 0), rgba(255, 255, 255, 0.75), rgba(190, 190, 190, 0));
+    }
+
+
+
+}
+
+/* ------------------ Forum para tablets --------------------------*/
+@media screen and (min-width: 460px) and (max-width: 1024px) {
+    .container {
+        margin: 15px;
+        padding: 15px;
+    }
+
+    .subforum-row {
+        display: grid;
+        grid-template-columns: 10% 60% 10% 20%;
+    }
+
+    .subforum-icon i {
+        font-size: 35px;
+    }
+
+    html {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 16px;
+    }
+
+}
+
+header {
+    margin-inline: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+header .navbar {
+    margin: 100px 0;
+}
+
+/* --------------------- Barra de navegação ----------------------*/
+
+
+/*------------------- Barra de navegação para celulares ---------------------------------*/
+@media screen and (max-width: 460px) {
+    .navigation {
+        max-height: auto;
+    }
+
+    .close-icon i {
+        font-size: 30px;
+    }
+
+    .nav-item a {
+        float: left;
+        display: inline;
+        margin-inline: 3px;
+        font-size: 10px;
+        padding: 5px;
+    }
+
+
+    .bar-icon {
+        font-size: 30px;
+    }
+
+    .brand {
+        font-size: 20px;
+    }
+}
+
+/* --------------- Barra de pesquisa -----------------------------*/
+.search-box {
+    margin-top: 10px;
+    margin: 1% 0 0 0;
+    padding: 40px 0 0 0;
+    display: flex;
+    justify-content: center;
+
+}
+
+.search-box select {
+    padding: 10px;
+
+}
+
+.search-box input {
+    padding: 10px;
+}
+
+.search-box button {
+    padding: 10px;
+    background-color: var(--primaryColor);
+    color: var(--thirdColor);
+}
+
+.search-box button:hover {
+    background-color: var(--secondColorHover);
+    color: var(--primaryColor);
+    box-shadow: 1px 2px 3px var(--primaryColor);
+}
+
+div.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: max-content;
+    overflow: hidden;
+
+    background-color: var(--primaryColor);
+    border-radius: 100px;
+    box-shadow: 2px 2px 5px none;
+}
+
+input {
+    background-color: transparent;
+    outline: none;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    padding: 4px 0px 4px 14px;
+    border: none;
+    width: 80%;
+}
+
+input::placeholder {
+    color: var(--primaryFontColor);
+}
+
+button {
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    width: 20%;
+
+    font-size: 16px;
+    color: var(--thirdColor);
+    padding: 8px 10px;
+    border: none;
+    border-radius: 0px;
+
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: var(--primaryColor);
+}
+
+select {
+    border: transparent;
+    border-radius: 100px;
+    border-color: none;
+    font-family: 'Roboto', sans-serif;
+    color: var(--primaryFontColor);
+}
+
+/* -------------- Barra de pesquisa para celular ----------------------- */
+@media screen and (max-width: 460px) {
+
+    .search-box input,
+    .search-box button,
+    .search-box select {
+        min-width: 50px;
+        margin-top: 5px;
+    }
+
+}
+
+/* ---------------- Comentários do Forum ------------------------ */
+.forum-info {
+    margin: 2%;
+    /* margin-top: 8%; */
+    padding: 30px;
+    /* padding-top: 40px; */
+    background-color: var(--primaryColor);
+
+    font-family: 'Roboto Slab', serif;
+    
+}
+
+.chart {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.chart a:hover {
+    color: var(--secondColorHover);
+}
+
+footer {
+    margin-top: 30px;
+    margin: 2%;
+    padding: 20px;
+    background-color: var(--secondColor);
+    display: block;
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+    color: var(--primaryFontColor);
+}
+
+footer a:hover {
+    color: var(--secondFontColor);
+}
+
+/* ----------------------- Pots do Forum -------------------------- */
+
+.table-head {
+    display: flex;
+}
+
+.table-head div {
+    padding: 5px;
+    margin: 2px;
+    background-color: var(--secondColor);
+    font-weight: bold;
+}
+
+.table-head .status {
+    flex: 5%;
+}
+
+.table-head .subjects {
+    flex: 70%;
+}
+
+.table-head .replies {
+    flex: 10%;
+}
+
+.table-head .last-reply {
+    flex: 15%;
+}
+
+/* ------------------ Tabela de posts --------------------------- */
+
+.table-row {
+    display: flex;
+}
+
+.table-row .status,
+.table-row .subjects,
+.table-row .replies,
+.table-row .last-reply {
+    padding: 5px;
+    margin: 2px;
+    background-color: #131415;
+}
+
+.table-row .status {
+    flex: 5%;
+    font-size: 30px;
+    text-align: center;
+}
+
+.table-row .subjects {
+    flex: 70%;
+}
+
+.table-row .replies {
+    flex: 10%;
+}
+
+.table-row .last-reply {
+    flex: 15%;
+}
+
+#playlistforumadd {
+    display: flex;
+    /* height: auto; */
+    width: 100%;
+}
+
+/* -------------------- Barra de Navegação ---------------------------*/
+.navigate {
+    margin-block: 20px;
+    font-weight: lighter;
+    font-size: 24px;
+}
+
+.navigate a {
+    color: #fff;
+    margin: 0 2%;
+}
+
+.navigate #buttonBackVideo {
+    width: 40px;
+    height: 40px;
+}
+
+.navigate a:hover {
+    color: #FF0042;
+    font-weight: bolder;
+}
+
+/* Pagination*/
+
+.pagination {
+    padding: 20px;
+    font-size: 15px;
+}
+
+.pagination a {
+    color: #fff;
+    margin-inline: 5px;
+    padding: 5px 10px;
+    border: solid 0.5px #fff;
+}
+
+.pagination a:hover {
+    opacity: 0.5;
+}
+
+.note {
+    background-color: #111314;
+    padding: 20px;
+    display: block;
+}
+
+.note span {
+    font-size: 20px;
+    margin-block: 5px;
+}
+
+/* ------------------------------ Detalhes ----------------------------- */
+.container-detail {
+    margin: 0 0 0 0;
+    padding: 0 2% 0 2%;
+    height: 65vh;
+}
+.head {
+    display: flex;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+}
+
+.authorsBody {
+    flex: 20%;
+    
+}
+
+.authorsHead {
+    flex: 20%;
+    text-align: center;
+    font-size: xx-large;
+}
+
+.authorsHead a {
+    color: var(--secondFontColor);
+}
+
+.content {
+    flex: 80%;
+}
+
+.body {
+    display: flex;
+    /* background-color: var(--primaryColor); */
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+
+    height: auto;
+    overflow: hidden;
+}
+
+.body .authorsBody .username {
+    font-size: 20px;
+}
+
+.body .authorsBody img {
+    max-width: 50px;
+    max-height: 80px;
+}
+
+.body .content .comment button {
+    border: none;
+    padding: 10px;
+    font-weight: bolder;
+    box-shadow: 4px 6px #fff;
+    cursor: pointer;
+    float: right;
+}
+
+iframe {
+    border-radius: 5px;
+}
+
+/* ---------------------- Seção de comentários -------------------------- */
+.comment-area {
+    margin-bottom: 50px;
+}
+
+.comment-area textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    margin-block: 10px;
+}
+
+.comment-area input {
+    float: right;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.comment-area input:hover {
+    border: solid 1px #000000;
+}
+
+.fa-comment {
+    height: 50%;
+}
+
+.separetor {
+    margin-top: 10px;
+    padding: 2% 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+.topic-container{
+    height: 100vh;
+    width: 100%;
+}
+
+.content-video {
+    height: 70vh;
+    width: 70vw;
+
+    margin-left: 15%;
+    margin-right: 15%;
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    overflow: hidden;
+
+    background-color: transparent;
+}
+
+.content-video iframe {
+    height: 100%;
+    width: 100%;
+    border: none;
+}
