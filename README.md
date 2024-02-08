@@ -1,5 +1,5 @@
 # GoodLink
-Um projeto feito com o intuito de facilitar estudantes e pessoas que desejam procurar conteúdo acadêmico, estudantil ou outros temas.
+Um projeto feito com o intuito de facilitar estudantes e pessoas que desejam procurar conteúdo acadêmico ou outros temas.
 
 #
 *Tecnologias* 
