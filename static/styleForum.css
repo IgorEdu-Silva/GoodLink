@@ -51,6 +51,7 @@ h1 {
     height: 100%;
 }
 
+
 .subforum-title {
     background-color: var(--primaryColor);
     color: var(--thirdFontColor);
@@ -159,6 +160,8 @@ div.subforum-title {
 
     align-items: center;
     text-align: center;
+
+    width: 40%;
 }
 
 #playlist-form label {
@@ -243,12 +246,6 @@ header {
 
 header .navbar {
     margin: 100px 0;
-}
-
-/* --------------------- Form ----------------------*/
-
-.container-form {
-    /* height: 100%; */
 }
 
 
