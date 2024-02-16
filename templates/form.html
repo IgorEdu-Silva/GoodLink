@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="PT-br">
+
 <head>
+    <title>Forum</title>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forum</title>
-    <link rel="stylesheet" href="../static/styleForum.css">
-    
 
+    <link rel="stylesheet" href="../static/styleForum.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,86 +24,75 @@
 </head>
 
 <body>
-
-    <header>
-        <div class="search-box">
-            <div class="wrapper">
-                <select id="categorias" name="categorias">
-                    {% for categoria in categorias %}
-                        <option value="{{ categoria.ID }}">{{ categoria.NomeCategoria }}</option>
-                    {% endfor %}
-                </select>
-                <input type="text" name="search-bar" placeholder="Pesquisa...">
-                <button>🔍</button>
-            </div>
-        </div>
-        
-    </header>
-
     <div class="container-page">
-    <div class="container-form">
-        <div class="subforum">
-
-            <!-- <div class="subforum-title">
-                <input type="button" id="inpt-for-playlist" class="inpt_for_logres" value="Playlists">
-                <input type="button" id="inpt-for-addplaylist" class="inpt_for_logres" value="Adicionar playlist">
-            </div>             -->
-            <div class="subforum-title">
-                <a href="{{ url_for('forum') }}" id="inpt-for-playlist" class="inpt_for_logres">Playlists</a>
-                <a href="{{ url_for('form') }}" id="inpt-for-addplaylist" class="inpt_for_logres">Adicionar playlist</a>
+        <header>
+            <div class="search-box">
+                <div class="wrapper">
+                    <select id="categorias" name="categorias">
+                        {% for categoria in categorias %}
+                        <option value="{{ categoria.ID }}">{{ categoria.NomeCategoria }}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="text" name="search-bar" placeholder="Pesquisa...">
+                    <button>🔍</button>
+                </div>
             </div>
-            
-            <div class="subforum-row" id="playlistforumadd">
-                <!-- <div class="form-img">
-                    <img src="../static/imagens/pexels-kate-trifo-6414318.jpg" alt="Estudando">
-                </div> -->
-                <!-- Formulário para adicionar uma nova playlist -->
-                <form id="playlist-form" action="/adicionar_playlist" method="POST">
-                    <label for="titulo">Título:</label>
-                    <input type="text" id="titulo" name="titulo" required>
-            
-                    <label for="descricao">Descrição:</label>
-                    <input type="text" id="descricao" name="descricao" required>
-            
-                    <label for="descricao">Nome do Canal:</label>
-                    <input type="text" id="nomeDoCanal" name="nomeDoCanal" required>
-
-                    <label for="urlVideo">Iframe do vídeo:</label>
-                    <input type="text" id="urlVideo" name="urlVideo" required>
-                    
-                    <label for="urlVideo">URL do canal:</label>
-                    <input type="text" id="urlCanal" name="urlCanal" required>
-
-                    <label for="categoria">Categoria:</label>
-                    <input type="text" id="categoria" name="categoria" required>
-            
-                    <input type="submit" value="Adicionar Playlist">
-                </form>
-            </div>
-            
-        </div>
-    </div>
     
-    <div class="forum-info">
-        <div class="container-forum">
-            <div class="chart">
-                <a href="https://github.com/IgorEdu-Silva/GoodLink" target="_blank">GoodLink</a>
-                <br>
-                <!-- <span>&copy;  <a href="https://github.com/IgorEdu-Silva">Igor Eduardo</a> | Todos os direitos reservados</span> -->
-                <br>
+        </header>
+        
+        <div class="container-playlist">
+            <div class="subforum">
+                <div class="subforum-title">
+                    <a href="{{ url_for('forum') }}" id="inpt-for-playlist" class="inpt_for_logres">Playlists</a>
+                    <a href="{{ url_for('form') }}" id="inpt-for-addplaylist" class="inpt_for_logres">Adicionar
+                        playlist</a>
+                </div>
+
+                <!-- <div class="subforum-row" id="playlistforumadd">
+
+                    <form id="playlist-form" action="/adicionar_playlist" method="POST">
+                        <label for="titulo">Título:</label>
+                        <input type="text" id="titulo" name="titulo" required>
+
+                        <label for="descricao">Descrição:</label>
+                        <input type="text" id="descricao" name="descricao" required>
+
+                        <label for="descricao">Nome do Canal:</label>
+                        <input type="text" id="nomeDoCanal" name="nomeDoCanal" required>
+
+                        <label for="urlVideo">Iframe do vídeo:</label>
+                        <input type="text" id="urlVideo" name="urlVideo" required>
+
+                        <label for="urlCanal">URL do canal:</label>
+                        <input type="text" id="urlCanal" name="urlCanal" required>
+
+                        <label for="categoria">Categoria:</label>
+                        <input type="text" id="categoria" name="categoria" required>
+
+                        <input type="submit" value="Adicionar Playlist">
+                    </form>
+                </div> -->
+
             </div>
-            <span>Este site foi criado para fins estudantis.</span>
+        </div>
+
+        <div class="forum-info">
+            <div class="container-forum">
+                <div class="chart">
+                    <a href="https://github.com/IgorEdu-Silva/GoodLink" target="_blank">GoodLink</a>
+                    <br>
+                    <!-- <span>&copy;  <a href="https://github.com/IgorEdu-Silva">Igor Eduardo</a> | Todos os direitos reservados</span> -->
+                    <br>
+                </div>
+                <span>Este site foi criado para fins estudantis.</span>
+            </div>
         </div>
     </div>
-</div>
-
-    <!-- <footer>
-        <span>&copy;  <a href="https://github.com/IgorEdu-Silva">Igor Eduardo</a> | Todos os direitos reservados</span>
-    </footer> -->
 
     <script src="../static/main.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </body>
+
 </html>

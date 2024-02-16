@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <head>
+    <title>GoodLink</title>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,20 +16,17 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/static/imagens/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/static/imagens/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="../static/imagens/favicon_io/site.webmanifest">
-    
-    <title>GoodLink</title>
-
 </head>
 
 <body>
 
     <div class="flashAlertDiv">
-        {%  set menssagem = get_flashed_messages() %}
-        {%  if menssagem %}
+        {% set menssagem = get_flashed_messages() %}
+        {% if menssagem %}
         <div class="flashAlert">
             {{menssagem[0]}}
         </div>
-        {%  endif %}
+        {% endif %}
     </div>
 
     <main>
@@ -39,41 +37,30 @@
         </span><br>
 
         <div class="login-registro" id="login">
-            <!-- <span id="facebook_Google">
-                <a href="#" id="inptLogarFacebook" class="loginsAlternativo"><img src="../static/imagens/icons8-facebook-num-círculo.svg" class="logoFacebook"> Entrar com Facebook</a>
-                <a href="#" id="inptLogarGoogle" class="loginsAlternativo"><img src="../static/imagens/Google__G__Logo.svg" class="logoGoogle"> Entrar com Google</a>
-            </span> -->
-
             <p>Conectar-se com seu Email</p>
 
-            <form method="POST" action="{{ url_for('login') }}">  
+            <form method="POST" action="{{ url_for('login') }}">
                 <fieldset>
                     <input type="email" name="email_login" id="email_login" placeholder="Email" required><br>
                     <input type="password" name="password_login" id="password_login" placeholder="Senha" required><br>
                     <input type="submit" class="bttnLogRes" value="Entrar" onclick="logar()"><br>
-                    <!-- <input type="button" class="links-pass" id="inpt-for-pass" value="Esqueci minha senha"> -->
                 </fieldset>
             </form>
         </div>
 
         <div class="login-registro" id="registro">
-            <!-- <span id="facebook_Google">
-                <a href="#" id="inptLogarFacebook" class="loginsAlternativo"><img src="../static/imagens/icons8-facebook-num-círculo.svg" class="logoFacebook"> Cadastre-se com Facebook</a>
-                <a href="#" id="inptLogarGoogle" class="loginsAlternativo"><img src="../static/imagens/Google__G__Logo.svg" class="logoGoogle"> Cadastre-se com Google</a>
-            </span> -->
-        
             <p>Cadastrar-se com seu Email</p>
-        
-            <!-- Corrigir o fechamento prematuro da tag form -->
+
             <form method="POST" action="{{ url_for('registro') }}">
                 <fieldset>
-                    <input type="text" name="name_register" id="name_register" placeholder="Nome e Sobrenome" required><br>
+                    <input type="text" name="name_register" id="name_register" placeholder="Nome e Sobrenome"
+                        required><br>
                     <input type="email" name="email_register" id="email_register" placeholder="Email" required><br>
-                    <input type="password" name="password_register" id="password_register" placeholder="Senha Mínimo 8 caracteres" required minlength="8"><br>
-                    
-                    <!-- Movendo o botão de submit para dentro do bloco form -->
+                    <input type="password" name="password_register" id="password_register"
+                        placeholder="Senha Mínimo 8 caracteres" required minlength="8"><br>
+
                     <input type="submit" class="bttnLogRes" value="Criar nova conta" onclick="cadastrar()"><br>
-        
+
                     <nobr>
                         <input type="checkbox" name="inptTermos" id="inptTermos" required>
                         <label for="inptTermos">Li e aceito os
@@ -81,7 +68,7 @@
                             <a class="links" href="{{ url_for('politica') }}">politica</a>
                         </label>
                     </nobr>
-                    
+
                     <nobr>
                         <input type="checkbox" name="checkTermos" id="lembrar-me" checked>
                         <label for="checkTermos">Lembre-me</label>
@@ -90,20 +77,10 @@
             </form>
         </div>
         
-        <!--<div class="login-registro" id="reset-pass">
-            <form method="POST" action="_reset_pass">
-                <fieldset>
-                    <input type="password" name="old_pass" id="old_pass" placeholder="   Senha antiga" require minlength="10"><br>
-                    <input type="password" name="new_pass" id="new_pass" placeholder="   Nova senha" required minlength="10"><br>
-                    <input type="password" name="confirme_pass" id="confirme_pass" placeholder="   Confirme a senha" required minlength="10"><br>
-                    <input type="submit" class="bttnLogRes" id="confirmReset" value="Confirmar" onclick="logar()"><br>
-                </fieldset>
-            </form>
-        </div>-->
-
     </main>
+
     <script src="../static/main.js"></script>
-    
+
 </body>
 
 </html>

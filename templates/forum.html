@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="PT-br">
+
 <head>
+    <title>Forum</title>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forum</title>
-    <link rel="stylesheet" href="../static/styleForum.css">
     
-
+    <link rel="stylesheet" href="../static/styleForum.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,81 +26,72 @@
 <body>
 
     <div class="container-page">
-    <header>
-        <div class="search-box">
-            <div class="wrapper">
-                <select id="categorias" name="categorias">
-                    {% for categoria in categorias %}
+        <header>
+            <div class="search-box">
+                <div class="wrapper">
+                    <select id="categorias" name="categorias">
+                        {% for categoria in categorias %}
                         <option value="{{ categoria.ID }}">{{ categoria.NomeCategoria }}</option>
-                    {% endfor %}
-                </select>
-                <input type="text" name="search-bar" placeholder="Pesquisa...">
-                <button>🔍</button>
+                        {% endfor %}
+                    </select>
+                    <input type="text" name="search-bar" placeholder="Pesquisa...">
+                    <button>🔍</button>
+                </div>
             </div>
-        </div>
-        
-    </header>
+
+        </header>
 
         <div class="container-playlist">
-            <div class="subforum">        
-            
-            <!-- <div class="subforum-title">
-                <input type="button" id="inpt-for-playlist" class="inpt_for_logres" value="Playlists">
-                <input type="button" id="inpt-for-addplaylist" class="inpt_for_logres" value="Adicionar playlist">
-            </div>       -->
+            <div class="subforum">
+                <div class="subforum-title">
+                    <a href="{{ url_for('forum') }}" id="inpt-for-playlist" class="inpt_for_logres">Playlists</a>
+                    <a href="{{ url_for('form') }}" id="inpt-for-addplaylist" class="inpt_for_logres">Adicionar
+                        playlist</a>
+                </div>
 
-            <div class="subforum-title">
-                <a href="{{ url_for('forum') }}" id="inpt-for-playlist" class="inpt_for_logres">Playlists</a>
-                <a href="{{ url_for('form') }}" id="inpt-for-addplaylist" class="inpt_for_logres">Adicionar playlist</a>
+                {% for playlist in playlists %}
+                <div class="subforum-row">
+                    <div class="subforum-icon subforum-column center">
+                        <ion-icon class="chatbox-outline" name="chatbox-outline"></ion-icon>
+                    </div>
+                    <div class="subforum-description subforum-column">
+                        <h4><a href="{{ url_for('detail', playlist_id=playlist.ID) }}">{{ playlist.TituloPlaylist }}</a>
+                        </h4>
+                        <p>{{ playlist.DescricaoPlaylist }}</p>
+                    </div>
+                    <div class="subforum-stats subforum-column center">
+                        <span>{{ playlist.nomeDoCanal }}</span>
+                    </div>
+                    <div class="subforum-info subforum-column">
+                        <span>{{ playlist.usuario_criador.NomeUsuario }}</span>
+                        <br>
+                        <span>{{ playlist.DataPublicacao }}</span>
+                    </div>
+                </div>
+                {% endfor %}
+
             </div>
-            
+        </div>
 
-            {% for playlist in playlists %}
-            <div class="subforum-row">
-                <div class="subforum-icon subforum-column center">
-                    <ion-icon class="chatbox-outline" name="chatbox-outline"></ion-icon>
-                </div>
-                <div class="subforum-description subforum-column">
-                    <h4><a href="{{ url_for('detail', playlist_id=playlist.ID) }}">{{ playlist.TituloPlaylist }}</a></h4>
-                    <p>{{ playlist.DescricaoPlaylist }}</p>
-                </div>
-                <div class="subforum-stats subforum-column center">
-                    <span>{{ playlist.nomeDoCanal }}</span>
-                </div>
-                <div class="subforum-info subforum-column">
-                    <span>{{ playlist.usuario_criador.NomeUsuario }}</span>
+        <div class="forum-info">
+            <div class="container-forum">
+                <div class="chart">
+                    <a href="https://github.com/IgorEdu-Silva/GoodLink" target="_blank">GoodLink</a>
                     <br>
-                    <span>{{ playlist.DataPublicacao }}</span>
+                    <br>
                 </div>
+                <span>Este site foi criado para fins estudantis.</span>
             </div>
-        {% endfor %}
-            
         </div>
+
     </div>
-    
-    <div class="forum-info">
-        <div class="container-forum">
-            <div class="chart">
-                <a href="https://github.com/IgorEdu-Silva/GoodLink" target="_blank">GoodLink</a>
-                <br>
-                <!-- <span>&copy;  <a href="https://github.com/IgorEdu-Silva">Igor Eduardo</a> | Todos os direitos reservados</span> -->
-                <br>
-            </div>
-            <span>Este site foi criado para fins estudantis.</span>
-        </div>
-    </div>
-    
-    </div>
-    <!-- <footer>
-        <span>&copy;  <a href="https://github.com/IgorEdu-Silva">Igor Eduardo</a> | Todos os direitos reservados</span>
-    </footer> -->
 
     <script>
         // Função para filtrar as playlists ao selecionar uma categoria
-        document.getElementById('categorias').addEventListener('change', function() {
+        document.getElementById('categorias').addEventListener('change', function () {
             var categoriaSelecionada = this.value;
             var subforumRows = document.getElementsByClassName('subforum-row');
-            
+
             // Mostrar apenas as playlists relacionadas à categoria selecionada e ocultar as outras
             for (var i = 0; i < subforumRows.length; i++) {
                 var playlistCategoria = subforumRows[i].getAttribute('data-categoria');
@@ -111,10 +103,10 @@
             }
         });
     </script>
-
     <script src="../static/main.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    
+
 </body>
+
 </html>
