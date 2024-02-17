@@ -37,9 +37,9 @@
                     <button>🔍</button>
                 </div>
             </div>
-    
+
         </header>
-        
+
         <div class="container-playlist">
             <div class="subforum">
                 <div class="subforum-title">
@@ -48,31 +48,61 @@
                         playlist</a>
                 </div>
 
-                <!-- <div class="subforum-row" id="playlistforumadd">
+                <div class="container-form">
+                    <div class="form-image">
+                        <img src="../static/imagens/pexels-christina-morillo-1181210.jpg">
+                    </div>
+                    <div class="form">
+                        <form id="playlist-form" action="/adicionar_playlist" method="POST">
+                            <div class="form-header">
+                                <div class="title">
+                                    <h1>Preencha os dados</h1>
+                                </div>
+                            </div>
 
-                    <form id="playlist-form" action="/adicionar_playlist" method="POST">
-                        <label for="titulo">Título:</label>
-                        <input type="text" id="titulo" name="titulo" required>
+                            <div class="input-group">
+                                <div class="input-box">
+                                    <label for="titulo">Título:</label>
+                                    <input type="text" id="titulo" name="titulo" required
+                                        placeholder="Título da playlist">
+                                </div>
 
-                        <label for="descricao">Descrição:</label>
-                        <input type="text" id="descricao" name="descricao" required>
+                                <div class="input-box">
+                                    <label for="descricao">Descrição:</label>
+                                    <input type="text" id="descricao" name="descricao" required
+                                        placeholder="Descrição da playlist">
+                                </div>
+                                <div class="input-box">
+                                    <label for="descricao">Nome do Canal:</label>
+                                    <input type="text" id="nomeDoCanal" name="nomeDoCanal" required
+                                        placeholder="Nome do canal">
+                                </div>
 
-                        <label for="descricao">Nome do Canal:</label>
-                        <input type="text" id="nomeDoCanal" name="nomeDoCanal" required>
+                                <div class="input-box">
+                                    <label for="urlVideo">Iframe do vídeo:<span
+                                            class="question-mark">&quest;</span></label>
+                                    <input type="text" id="urlVideo" name="urlVideo" required
+                                        placeholder="Iframe do vídeo">
+                                </div>
 
-                        <label for="urlVideo">Iframe do vídeo:</label>
-                        <input type="text" id="urlVideo" name="urlVideo" required>
+                                <div class="input-box">
+                                    <label for="urlCanal">URL do canal:</label>
+                                    <input type="text" id="urlCanal" name="urlCanal" required
+                                        placeholder="URL do canal">
+                                </div>
 
-                        <label for="urlCanal">URL do canal:</label>
-                        <input type="text" id="urlCanal" name="urlCanal" required>
+                                <div class="input-box">
+                                    <label for="categoria">Categoria:</label>
+                                    <input type="text" id="categoria" name="categoria" required
+                                        placeholder="Categoria da playlist">
+                                </div>
+                            </div>
 
-                        <label for="categoria">Categoria:</label>
-                        <input type="text" id="categoria" name="categoria" required>
+                            <input type="submit" value="Adicionar Playlist">
 
-                        <input type="submit" value="Adicionar Playlist">
-                    </form>
-                </div> -->
-
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
 

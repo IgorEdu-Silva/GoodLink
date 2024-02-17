@@ -1,16 +1,14 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 :root {
     --primaryColor: #FFFFFF;
     --secondColor: #0099DD;
     --thirdColor: #000000;
-    --secondColorHover: #0078bd;
-    --primaryFontColor: #000000;
-    --secondFontColor: #FFFFFF;
-    --thirdFontColor: #0099DD;
+    --forthColor: #0078bd;
 }
 
 body {
@@ -19,15 +17,18 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    color: var(--primaryFontColor);
+    color: var(--thirdColor);
     font-family: 'Roboto', sans-serif;
     height: 100vh;
+    width: 100%;
     overflow: hidden;
-    min-width: 400px;
+    min-width: 450px;
+    justify-content: center;
+    align-items: center;
 }
 
 a {
-    color: var(--primaryFontColor);
+    color: var(--thirdColor);
     font-weight: bolder;
     text-decoration: none;
 }
@@ -64,7 +65,7 @@ h1 {
 }
 
 .search-box button:hover {
-    background-color: var(--secondColorHover);
+    background-color: var(--forthColor);
     color: var(--primaryColor);
     box-shadow: 1px 2px 3px var(--primaryColor);
 }
@@ -75,7 +76,6 @@ div.wrapper {
     justify-content: space-between;
     width: max-content;
     overflow: hidden;
-
     background-color: var(--primaryColor);
     border-radius: 100px;
     box-shadow: 2px 2px 5px none;
@@ -84,7 +84,6 @@ div.wrapper {
 input {
     background-color: transparent;
     outline: none;
-
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     padding: 4px 0px 4px 14px;
@@ -93,7 +92,7 @@ input {
 }
 
 input::placeholder {
-    color: var(--primaryFontColor);
+    color: var(--thirdColor);
 }
 
 button {
@@ -101,7 +100,6 @@ button {
     outline: none;
     cursor: pointer;
     width: 20%;
-
     font-size: 16px;
     color: var(--thirdColor);
     padding: 8px 10px;
@@ -119,7 +117,7 @@ select {
     border-radius: 100px;
     border-color: none;
     font-family: 'Roboto', sans-serif;
-    color: var(--primaryFontColor);
+    color: var(--thirdColor);
 }
 
 /* NOTE css das playlists */
@@ -127,9 +125,13 @@ select {
     height: 100%;
 }
 
+.subforum {
+    height: 100%;
+}
+
 .subforum-title {
     background-color: var(--primaryColor);
-    color: var(--thirdFontColor);
+    color: var(--secondColor);
     padding: 5px;
     border-radius: 5px;
     align-items: center;
@@ -154,11 +156,11 @@ select {
 }
 
 .subforum-description a {
-    color: var(--thirdFontColor);
+    color: var(--secondColor);
 }
 
 .subforum-description a:hover {
-    color: var(--secondColorHover);
+    color: var(--forthColor);
 }
 
 .center {
@@ -172,7 +174,7 @@ select {
 }
 
 .subforum-icon i:hover {
-    color: var(--secondColorHover);
+    color: var(--forthColor);
 }
 
 .subforum-devider {
@@ -207,100 +209,192 @@ div.subforum-title {
     color: var(--secondColor);
 }
 
-#inpt-for-playlist,
-#inpt-for-addplaylist {
-    outline: none;
-    border: none;
-    background-color: transparent;
-    border-radius: 0px;
-    color: var(--secondColor);
+/* NOTE css do formuário */
+.container-form {
     width: 100%;
+    height: 92%;
+    display: flex;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.050);
+    padding: 20px;
+    border-radius: 5px;
 }
 
-#inpt-for-playlist:focus,
-#inpt-for-addplaylist:focus {
-    border-bottom: 0.23em solid var(--secondColor);
-    transition-duration: 300ms;
-    color: var(--secondColor);
+.form-image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#playlist-form {
+.form-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.form {
+    width: 50%;
     display: flex;
     flex-direction: column;
-    padding: 2%;
-
-    background-color: var(--primaryColor);
-    border-radius: 5px;
-
+    justify-content: center;
     align-items: center;
-    text-align: center;
-
-    width: 40%;
+    background-color: var(--primaryColor);
+    padding: 50px;
+    min-width: 400px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
 }
 
-#playlist-form label {
-    margin: 20px;
+.form-header {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
 }
 
-#playlist-form input[type="text"],
-#playlist-form textarea {
-    color: var(--primaryFontColor);
-    background-color: #7eb2e6;
-    border-radius: 3px;
+.form-header h1::after {
+    content: "";
+    display: block;
+    width: 9rem;
+    height: 5px;
+    background-color: #6c63ff;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.input-box input {
+    margin: 10px 0;
+    padding: 13px 20px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+    font-size: 13px;
+}
+
+.input-box:nth-child(4) input{
+    margin: 4px 0;
+    padding: 13px 20px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #f100001c;
+    font-size: 13px;
+}
+
+.input-box input:hover {
+    background-color: #eeeeee75;
+}
+
+.input-box input:focus-visible {
+    outline: 1px solid #6c63ff;
+}
+
+.input-box label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #000000c0;
+}
+
+.input-box input::placeholder {
+    color: #000000be;
 }
 
 #playlist-form input[type="submit"] {
-    padding: 10px 15px;
-    margin-top: 20px;
+    width: 100%;
+    margin-top: 2.5rem;
     border: none;
-    border-radius: 3px;
-    background-color: var(--secondColor);
-    color: var(--secondFontColor);
-    font-weight: bold;
+    background-color: #6c63ff;
+    padding: 0.62rem;
+    border-radius: 5px;
     cursor: pointer;
 }
 
 #playlist-form input[type="submit"]:hover {
-    background-color: var(--secondColorHover);
+    background-color: #6b63fff1;
 }
 
-/* NOTE css do formulário */
-.table-row {
-    display: flex;
+#playlist-form input[value="Adicionar Playlist"] {
+    text-decoration: none;
+    font-size: 0.93rem;
+    font-weight: 500;
+    color: #fff;
 }
 
-.table-row .status,
-.table-row .subjects,
-.table-row .replies,
-.table-row .last-reply {
-    padding: 5px;
-    margin: 2px;
-    background-color: #131415;
-}
-
-.table-row .status {
-    flex: 5%;
-    font-size: 30px;
+.question-mark {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
     text-align: center;
+    line-height: 20px;
+    background-color: #f0f0f0;
+    color: #333;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
-.table-row .subjects {
-    flex: 70%;
+.question-mark:hover::before {
+    content: "Clique no botão de compartilhar do YouTube, logo em seguida em incorporar, copie e cole.";
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80px;
+    padding: 5px;
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    z-index: 1;
 }
 
-.table-row .replies {
-    flex: 10%;
+@media screen and (max-width: 1200px) {
+    .form-image {
+        display: none;
+    }
+
+    .container {
+        width: 50%;
+        height: auto;
+    }
+
+    .form {
+        width: 100%;
+        height: auto;
+        border-radius: 6px;
+    }
 }
 
-.table-row .last-reply {
-    flex: 15%;
-}
+@media screen and (max-width: 600px) {
+    .container {
+        width: auto;
+        height: auto;
+        padding: 0;
+    }
 
-#playlistforumadd {
-    display: flex;
+    .input-group {
+        display: flex;
+        flex-direction: column;
+        max-height: 8rem;
+        overflow-y: scroll;
+        flex-wrap: nowrap;
+    }
 
-    justify-content: center;
-    padding: 2%;
+    .form {
+        border-radius: 6px;
+    }
 }
 
 /* NOTE media screen das playlists */
@@ -404,7 +498,7 @@ header .navbar {
 }
 
 .chart a:hover {
-    color: var(--secondColorHover);
+    color: var(--forthColor);
 }
 
 footer {
@@ -415,9 +509,9 @@ footer {
     display: block;
     text-align: center;
     font-family: 'Roboto Slab', serif;
-    color: var(--primaryFontColor);
+    color: var(--thirdColor);
 }
 
 footer a:hover {
-    color: var(--secondFontColor);
+    color: var(--primaryColor);
 }
