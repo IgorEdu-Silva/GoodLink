@@ -39,15 +39,7 @@
         <div class="login-registro" id="login">
             <p>Conectar-se com seu Email</p>
 
-            <!-- <form method="POST" action="{{ url_for('login') }}">
-                <fieldset>
-                    <input type="email" name="email_login" id="email_login" placeholder="Email" required><br>
-                    <input type="password" name="password_login" id="password_login" placeholder="Senha" required><br>
-                    <input type="submit" class="bttnLogRes" value="Entrar" onclick="logar()"><br>
-                </fieldset>
-            </form> -->
-
-            <form method="POST" action="forum.html">
+            <form method="POST" action="{{ url_for('login') }}">
                 <fieldset>
                     <input type="email" name="email_login" id="email_login" placeholder="Email" required><br>
                     <input type="password" name="password_login" id="password_login" placeholder="Senha" required><br>
@@ -69,19 +61,11 @@
 
                     <input type="submit" class="bttnLogRes" value="Criar nova conta" onclick="cadastrar()"><br>
 
-                    <!-- <nobr>
+                    <nobr>
                         <input type="checkbox" name="inptTermos" id="inptTermos" required>
                         <label for="inptTermos">Li e aceito os
                             <a class="links" href="{{ url_for('termos') }}">termos</a> e
                             <a class="links" href="{{ url_for('politica') }}">politica</a>
-                        </label>
-                    </nobr> -->
-
-                    <nobr>
-                        <input type="checkbox" name="inptTermos" id="inptTermos" required>
-                        <label for="inptTermos">Li e aceito os
-                            <a class="links" href="termos.html">termos</a> e
-                            <a class="links" href="politica.html">politica</a>
                         </label>
                     </nobr>
 
