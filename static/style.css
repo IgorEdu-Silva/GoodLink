@@ -67,6 +67,10 @@ span#entarRegistrar {
     color: var(--secondColor);
 }
 
+#login p{
+    color: var(--primaryColor);
+}
+
 input {
     background-color: var(--primaryColor);
     outline: none;

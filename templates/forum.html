@@ -43,13 +43,19 @@
         
         <div class="container-playlist">
             <div class="subforum">
-                <div class="subforum-title">
+                <!-- <div class="subforum-title">
                     <a href="{{ url_for('forum') }}" id="inpt-for-playlist" class="inpt_for_logres">Playlists</a>
                     <a href="{{ url_for('form') }}" id="inpt-for-addplaylist" class="inpt_for_logres">Adicionar
                         playlist</a>
+                </div> -->
+
+                <div class="subforum-title">
+                    <a href="forum.html" id="inpt-for-playlist" class="inpt_for_logres">Playlists</a>
+                    <a href="form.html" id="inpt-for-addplaylist" class="inpt_for_logres">Adicionar
+                        playlist</a>
                 </div>
 
-                {% for playlist in playlists %}
+                <!-- {% for playlist in playlists %}
                 <div class="subforum-row">
                     <div class="subforum-icon subforum-column center">
                         <ion-icon class="chatbox-outline" name="chatbox-outline"></ion-icon>
@@ -68,7 +74,26 @@
                         <span>{{ playlist.DataPublicacao }}</span>
                     </div>
                 </div>
-                {% endfor %}
+                {% endfor %} -->
+
+                <div class="subforum-row">
+                    <div class="subforum-icon subforum-column center">
+                        <ion-icon class="chatbox-outline" name="chatbox-outline"></ion-icon>
+                    </div>
+                    <div class="subforum-description subforum-column">
+                        <h4><a href="{{ url_for('detail', playlist_id=playlist.ID) }}">Titulo da playlist/Link</a>
+                        </h4>
+                        <p>Descrição da playlist</p>
+                    </div>
+                    <div class="subforum-stats subforum-column center">
+                        <span>Nome do canal</span>
+                    </div>
+                    <div class="subforum-info subforum-column">
+                        <span>Nome de usuário</span>
+                        <br>
+                        <span>Data de publicação</span>
+                    </div>
+                </div>
 
             </div>
         </div>

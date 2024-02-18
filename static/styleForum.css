@@ -6,14 +6,17 @@
 
 :root {
     --primaryColor: #FFFFFF;
-    --secondColor: #0099DD;
-    --thirdColor: #000000;
-    --forthColor: #0078bd;
+    --secondColor: #2484BF;
+    --thirdColor: #081526;
+    --forthColor: #0D2840;
+    --fivethColor:  #000000be;
+    --sixthColor:  #00000010;
+    --seventhColor: #175073;
 }
 
 body {
     font-size: 14px;
-    background-image: url(imagens/pexels-julia-m-cameron-4144923.jpg);
+    background-image: url(imagens/dots-6297146_1920.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -65,12 +68,12 @@ h1 {
 }
 
 .search-box button:hover {
-    background-color: var(--forthColor);
-    color: var(--primaryColor);
+    background-color: var(--seventhColor);
+    color: var(--secondColor);
     box-shadow: 1px 2px 3px var(--primaryColor);
 }
 
-div.wrapper {
+.wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -109,7 +112,7 @@ button {
 }
 
 button:hover {
-    background-color: var(--primaryColor);
+    background-color: var(--secondColor);
 }
 
 select {
@@ -120,9 +123,17 @@ select {
     color: var(--thirdColor);
 }
 
+option {
+    background-color: var(--primaryColor);
+    color: var(--thirdColor);
+    font-family: 'Roboto', sans-serif;
+    border: transparent;
+    border-radius: 5px;
+}
+
 /* NOTE css das playlists */
 .container-playlist {
-    height: 100%;
+    height: 100vh;
 }
 
 .subforum {
@@ -160,7 +171,7 @@ select {
 }
 
 .subforum-description a:hover {
-    color: var(--forthColor);
+    color: var(--seventhColor);
 }
 
 .center {
@@ -174,7 +185,7 @@ select {
 }
 
 .subforum-icon i:hover {
-    color: var(--forthColor);
+    color: var(--seventhColor);
 }
 
 .subforum-devider {
@@ -188,7 +199,7 @@ select {
     width: 100%;
 }
 
-div.subforum-title {
+.subforum-title {
     display: flex;
     border-bottom: 0.2rem solid var(--primaryColor);
 
@@ -209,10 +220,26 @@ div.subforum-title {
     color: var(--secondColor);
 }
 
-/* NOTE css do formuário */
+/* NOTE media screen dos titulos */
+@media screen and (max-width: 460px) {
+    .subforum-title {
+        display: grid;
+        grid-template-rows: 50% 50%;
+        align-items: center;
+        height: 80px;
+    }
+
+    .inpt_for_logres {
+        padding: 0;
+        margin: 0;
+        border: none;
+    }
+}
+
+/* NOTE css do formulário */
 .container-form {
     width: 100%;
-    height: 92%;
+    height: 95%;
     display: flex;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.050);
     padding: 20px;
@@ -258,7 +285,7 @@ div.subforum-title {
     display: block;
     width: 9rem;
     height: 5px;
-    background-color: #6c63ff;
+    background-color: var(--secondColor);
     margin: 0 auto;
     position: absolute;
     border-radius: 10px;
@@ -282,7 +309,7 @@ div.subforum-title {
     padding: 13px 20px;
     border: none;
     border-radius: 10px;
-    box-shadow: 1px 1px 6px #0000001c;
+    box-shadow: 1px 1px 6px transparent;
     font-size: 13px;
 }
 
@@ -291,47 +318,47 @@ div.subforum-title {
     padding: 13px 20px;
     border: none;
     border-radius: 10px;
-    box-shadow: 1px 1px 6px #f100001c;
+    box-shadow: 1px 1px 6px transparent;
     font-size: 13px;
 }
 
 .input-box input:hover {
-    background-color: #eeeeee75;
+    background-color: transparent;
 }
 
 .input-box input:focus-visible {
-    outline: 1px solid #6c63ff;
+    outline: 1px solid var(--secondColor);
 }
 
 .input-box label {
     font-size: 0.75rem;
     font-weight: 600;
-    color: #000000c0;
+    color: var(--fivethColor);
 }
 
 .input-box input::placeholder {
-    color: #000000be;
+    color: var(--fivethColor);
 }
 
 #playlist-form input[type="submit"] {
     width: 100%;
     margin-top: 2.5rem;
     border: none;
-    background-color: #6c63ff;
+    background-color: var(--secondColor);
     padding: 0.62rem;
     border-radius: 5px;
     cursor: pointer;
 }
 
 #playlist-form input[type="submit"]:hover {
-    background-color: #6b63fff1;
+    background-color: var(--secondColor);
 }
 
 #playlist-form input[value="Adicionar Playlist"] {
     text-decoration: none;
     font-size: 0.93rem;
     font-weight: 500;
-    color: #fff;
+    color: var(--primaryColor);
 }
 
 .question-mark {
@@ -341,16 +368,16 @@ div.subforum-title {
     height: 20px;
     text-align: center;
     line-height: 20px;
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: var(--sixthColor);
+    color: var(--fivethColor);
     border-radius: 50%;
     cursor: pointer;
 }
 
 .question-mark:hover::before {
     content: "Clique no botão de compartilhar do YouTube, logo em seguida em incorporar, copie e cole.";
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
+    background-color: var(--sixthColor);
+    border: 1px solid transparent;
     border-radius: 5px;
     width: 80px;
     padding: 5px;
@@ -380,20 +407,69 @@ div.subforum-title {
 @media screen and (max-width: 600px) {
     .container {
         width: auto;
-        height: auto;
+        height: 100%;
         padding: 0;
+    }    
+
+    .container-playlist {
+        height: 80%;
     }
 
     .input-group {
         display: flex;
         flex-direction: column;
-        max-height: 8rem;
+        align-items: center;
+        max-height: 80%;
         overflow-y: scroll;
         flex-wrap: nowrap;
     }
 
     .form {
         border-radius: 6px;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        padding: 40px;
+    }
+
+    #playlist-form {
+        padding: 5%;
+        height: 80%;
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 460px) {
+    .container {
+        width: auto;
+        height: auto;
+        padding: 0;
+    }
+
+    .container-form {
+        height: 90%;
+    }
+    .input-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        max-height: 80%;
+        overflow-y: scroll;
+        flex-wrap: nowrap;
+    }
+
+    .form {
+        border-radius: 6px;
+        padding: 30px;
+        height: 100%;
+        width: 100%;
+    }
+
+    #playlist-form {
+        height: 80%;
+        width: 80%;
     }
 }
 
@@ -407,7 +483,7 @@ div.subforum-title {
     .subforum-row {
         display: grid;
         grid-template-columns: 25% 75%;
-        grid-template-rows: 65% 35%;
+        grid-template-rows: 50% 35%;
     }
 
     .subforum-devider {
@@ -415,6 +491,10 @@ div.subforum-title {
         border: 0;
         height: 1px;
         background-image: linear-gradient(to right, rgba(190, 190, 190, 0), rgba(255, 255, 255, 0.75), rgba(190, 190, 190, 0));
+    }
+
+    .subforum-column {
+        height: 80px;
     }
 }
 
@@ -498,7 +578,7 @@ header .navbar {
 }
 
 .chart a:hover {
-    color: var(--forthColor);
+    color: var(--secondColor);
 }
 
 footer {
