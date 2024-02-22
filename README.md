@@ -9,3 +9,7 @@ Um projeto feito com o intuito de facilitar estudantes e pessoas que desejam pro
   - [x] Python
   - [x] SQL
   - [X] JavaScript
+
+# 
+*Bibliotecas necessárias* 
+  - [X] Flask - pip install Flask
